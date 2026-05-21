@@ -18,6 +18,7 @@ namespace Parser
             this.Add("exit", c.quit);
             this.Add("die", c.die);
             this.Add("look", c.look);
+            this.Add("move", c.move);
         }
 
     }

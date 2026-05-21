@@ -32,6 +32,7 @@ namespace Parser
             this.rooms.Add(east);
 
             start.east = east;
+            east.west = start;
         }
     }
 }

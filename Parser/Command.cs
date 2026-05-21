@@ -61,6 +61,44 @@ namespace Parser
             }
         }
 
+        public void move(Game g, List<Token> tokens)
+        {
+            var direction = tokens[1];
+
+            if(direction is not null)
+            {
+                if(direction.Value == "north" && g.Player.location.north is not null)
+                {
+                    g.Player.location = g.Player.location.north;
+                } else if(direction.Value == "east" && g.Player.location.east is not null)
+                {
+                    g.Player.location = g.Player.location.east; 
+                } else if(direction.Value == "south" && g.Player.location.south is not null)
+                {
+                    g.Player.location = g.Player.location.south;
+                } else if(direction.Value == "west" && g.Player.location.west is not null)
+                {
+                   g.Player.location = g.Player.location.west;
+                } else
+                {
+                    //no valid exit in specified direction
+                    Console.WriteLine("There is no exit in that direction!");
+                    return;
+                }
+                Console.WriteLine("You move to the " + direction.Value + ".");
+                this.look(g, tokens);
+            } else
+            {
+                Console.WriteLine("Please provide a direction to move.");
+            }
+
+        }
+
+        public void useLock(Game g, List<Token> tokens)
+        {
+
+        }
+
         public void quit(Game g, List<Token> tokens)
         {
             Console.WriteLine("Okay bye!");

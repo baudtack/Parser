@@ -18,6 +18,5 @@ namespace Parser
 
 
         //items, treasure, traps, interactables
-        //exits
     }
 }

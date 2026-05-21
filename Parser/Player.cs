@@ -11,6 +11,7 @@ namespace Parser
         public int Health;
         public string Name;
         public Room location;
+        public List<Item> inventory = new List<Item>();
 
         public Player() : base(FSM.State.idle)
         {
