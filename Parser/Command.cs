@@ -94,8 +94,22 @@ namespace Parser
 
         }
 
-        public void useLock(Game g, List<Token> tokens)
+        public void useKey(Game g, List<Token> tokens)
         {
+            var key = tokens[1];
+            var lockable = tokens[2];
+
+            var inv = g.Player.inventory;
+
+            var keyQuery = inv.Where<Item>((i) => i.types.Contains(ItemType.key) 
+                                                  && i.Name.Contains(key.Value)).First();
+
+            var lockableQuery = inv.Where<Item>((i) => i.types.Contains(ItemType.lockable)
+                                                       && i.Name.Contains(key.Value)).First();
+            if(keyQuery is not null)
+            {
+                //do stuff
+            }
 
         }
 

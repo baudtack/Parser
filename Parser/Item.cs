@@ -16,16 +16,16 @@ namespace Parser
 
     public class Item
     {
-        string Name;
+        public string Name;
         //keywords?
-        string Description;
+        public string Description;
 
         int KeyId;
         bool isLocked = false;
 
-        List<ItemType> types = new List<ItemType>();
+        public List<ItemType> types = new List<ItemType>();
 
-        public void useLock(Item LockableObject) {
+        public void useKey(Item LockableObject) {
             if(this.types.Contains(ItemType.key)) {
                 if(LockableObject.types.Contains(ItemType.lockable))
                 {
