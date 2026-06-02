@@ -20,7 +20,7 @@ namespace Parser
         //keywords?
         public string Description;
 
-        int KeyId;
+        public int KeyId;
         bool isLocked = false;
 
         public List<ItemType> types = new List<ItemType>();

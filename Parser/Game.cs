@@ -16,6 +16,20 @@ namespace Parser
             this.rooms = new List<Room>();
 
             Room start = new Room();
+
+            Item k = new Item();
+            k.types.Add(ItemType.key);
+            k.Name = "a big iron key";
+            k.KeyId = 421;
+
+            Item c = new Item();
+            c.types.Add(ItemType.lockable);
+            c.Name = "a small wooden chest";
+            c.KeyId = 42;
+
+            p.inventory.Add(k);
+            p.inventory.Add(c);
+
             start.player = p;
             p.location = start;
             start.npcs.Add(new Dog());
