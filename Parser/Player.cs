@@ -8,10 +8,10 @@ namespace Parser
 {
     public class Player : FSM.StateMachine
     {
-        public int Health;
-        public string Name;
-        public Room location;
-        public List<Item> inventory = new List<Item>();
+        public int Health { get; set; }
+        public string Name { get; set; }
+        public Room location { get; set; }
+        public List<Item> inventory { get; set; } = new List<Item>();
 
         public Player() : base(FSM.State.idle)
         {

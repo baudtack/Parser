@@ -8,14 +8,18 @@ namespace Parser
 {
     public class Room
     {
-        public List<NPC> npcs = new List<NPC>();
-        public Player? player;
-        public String description;
-        public Room? north;
-        public Room? south;
-        public Room? east;
-        public Room? west;
+        public List<NPC> npcs { get; set; }
+        public Player? player { get; set; }
+        public String description { get; set; }
+        public Room? north { get; set; }
+        public Room? south { get; set; }
+        public Room? east { get; set; }
+        public Room? west { get; set; }
 
+        public Room()
+        {
+            this.npcs = new List<NPC>();
+        }
 
         //items, treasure, traps, interactables
     }

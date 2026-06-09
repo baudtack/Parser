@@ -131,8 +131,16 @@ namespace Parser
 
         }
 
+        public void save(Game g, List<Token> tokens)
+        {
+            Console.WriteLine("room location is...");
+            Console.WriteLine(g.Player.location.description);
+            g.save();
+        }
+
         public void quit(Game g, List<Token> tokens)
         {
+            g.save();
             Console.WriteLine("Okay bye!");
             Environment.Exit(0);
         }

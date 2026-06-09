@@ -9,7 +9,7 @@ namespace Parser
 {
     public class NPC : FSM.StateMachine
     {
-        public String description;
+        public String description { get; set; }
 
         public NPC() : base(FSM.State.idle)
         {

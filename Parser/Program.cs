@@ -8,11 +8,20 @@
 
             Player p = new Player();
             Game g = new Game(p);
-
+            
             Console.WriteLine("What is your name adventurer?");
             p.Name = Console.ReadLine();
 
-            Console.WriteLine("Hello, " + p.Name + "!");
+            try
+            {
+                g = g.load();
+            } catch(PlayerNotFoundException e)
+            {
+                Console.WriteLine("No such player, creating a new one.");
+                g.save();
+            }
+
+            Console.WriteLine("Hello, " + g.Player.Name + "!");
 
             LookupTable lookupTable = new LookupTable();
 
@@ -44,6 +53,7 @@
                 }
 
             }
+            
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Parser
             this.Add("look", c.look);
             this.Add("move", c.move);
             this.Add("usekey", c.useKey);
+            this.Add("save", c.save);
         }
 
     }
